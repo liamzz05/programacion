@@ -11,6 +11,7 @@ package hoja2.ej4;
 public class Ej4 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        
     }
 }
