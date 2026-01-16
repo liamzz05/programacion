@@ -19,13 +19,22 @@ public class ArrayUtil {
     }
     
     public static boolean estaVacio(int [] array){
-        return contarElementos(array)==0; //q no sea nulo
+        return array == null && contarElementos(array) == 0; //devuelve positivo si el array es nulo y no tiene elementos ni espacios
     }
     
-    public static int PrimerElemento(int [] array){
-        if (contarElementos(array)==0) {
-            
+    public static int PrimerElemento(int [] array) throws ArrayVacioExcepcion{
+        if (estaVacio(array)) {
+            throw new ArrayVacioExcepcion("El array esta vacio");
         }
-        return array[0];
+        return array[0]; // si el array no esta vacio devuelve el primer valor
     }
+    
+    public static int UltimoElemento(int [] array) throws ArrayVacioExcepcion{
+        if (estaVacio(array)) {
+            throw new ArrayVacioExcepcion("El array esta vacio");
+        }
+        return array[contarElementos(array)]; // si el array no esta vacio devuelve el ultimo numero usando el metodo de contar los elementos
+    }
+    
+    
 }
