@@ -27,6 +27,8 @@ public class Ej2 {
             }
         }
         
+        partidos.removeIf(p -> !p.esEmpate()); //expresion lambda
+        
         System.out.println("Total partidos: "+partidos.size());
         System.out.println(partidos);
         

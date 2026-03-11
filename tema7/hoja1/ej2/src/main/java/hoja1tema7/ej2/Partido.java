@@ -33,5 +33,9 @@ public class Partido {
     public String toString() {
         return "Partido{" + "equipoLocal=" + equipoLocal + ", equipoVisitante=" + equipoVisitante + ", golesLocal=" + golesLocal + ", golesVisitante=" + golesVisitante + '}';
     }
+
+    boolean esEmpate() {
+        return golesLocal == golesVisitante;
+    }
     
 }
