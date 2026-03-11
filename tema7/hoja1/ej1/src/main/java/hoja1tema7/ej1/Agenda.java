@@ -4,6 +4,7 @@
  */
 package hoja1tema7.ej1;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -12,7 +13,11 @@ import java.util.LinkedList;
  */
 public class Agenda extends LinkedList {
 
-    private LinkedList<Persona> agenda = new LinkedList<>();
+    private LinkedList<Persona> agenda;
+
+    public Agenda() {
+        agenda = new LinkedList<>();
+    }
 
     public void annadirPersona(Persona persona) {
         agenda.add(persona);
@@ -20,6 +25,20 @@ public class Agenda extends LinkedList {
 
     public void borrarPersona(Persona persona) {
         agenda.remove(persona);
+    }
+
+    public void borrarPersonaDNI(String dni) {
+        Iterator<Persona> iterador = agenda.iterator();
+        boolean encontrada = false;
+
+        while (iterador.hasNext()) {
+            Persona p = iterador.next();
+            if (p.getDNI().equalsIgnoreCase(dni) && !encontrada) {
+                iterador.remove();
+                System.out.println("Persona eliminada");
+                encontrada = true;
+            }
+        }
     }
 
     public void mostrarLista() {
@@ -31,10 +50,10 @@ public class Agenda extends LinkedList {
     }
 
     public Persona buscarPorDNI(String DNI) {
-        Persona encontrada=null;
+        Persona encontrada = null;
         for (Persona a : agenda) {
             if (a.getDNI().equals(DNI)) {
-                encontrada=a;
+                encontrada = a;
             }
         }
         return encontrada;
