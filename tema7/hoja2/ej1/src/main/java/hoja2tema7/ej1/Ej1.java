@@ -41,7 +41,7 @@ public class Ej1 {
                     int codigo = new Scanner(System.in).nextInt();
                     System.out.println("Cuantas horas tiene?");
                     int horas = new Scanner(System.in).nextInt();
-                    academia.modificarHoras(academia.getCursoCodigo(codigo), horas); // curso x codigo
+                    academia.modificarHoras(codigo, horas); // curso x codigo
                 }
                 case 5 ->
                     academia.mostrarCursos();

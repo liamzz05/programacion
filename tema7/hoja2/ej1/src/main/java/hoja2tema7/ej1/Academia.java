@@ -12,53 +12,68 @@ import java.util.LinkedList;
  * @author DAM104
  */
 public class Academia {
+
     private LinkedList<Curso> listaCursos;
 
     public Academia() {
-        listaCursos=new LinkedList<Curso>();
+        listaCursos = new LinkedList<Curso>();
     }
-    
-    public void annadirCursoFinal(Curso curso){
+
+    public void annadirCursoFinal(Curso curso) {
         listaCursos.addLast(curso);
     }
-    
-    public void annadirCurso(Curso curso, int pos){
-        listaCursos.add(pos, curso);
-    }
-    
-    public void borrarCurso(int codigo){
-        Iterator<Curso> iterador=listaCursos.iterator();
-        boolean encontrado=false;
-        
-        while(iterador.hasNext() && !encontrado){
-            Curso c=iterador.next();
-            if (c.getCodigo()==codigo) {
-                iterador.remove();
-                System.out.println("Curso eliminado");
-                encontrado=true;
-            }
+
+    public void annadirCurso(Curso curso, int pos) {
+        if (pos >= 0 && pos <= listaCursos.size()) {
+            listaCursos.add(pos, curso);
+        } else {
+            System.out.println("Posicion fuera de rango");
         }
     }
-    
-    public Curso getCursoCodigo(int codigo){
-        Iterator<Curso> iterador=listaCursos.iterator();
-        boolean encontrado=false;
-        Curso curso=null;
+
+    public void borrarCurso(int codigo) {
+        Iterator<Curso> iterador = listaCursos.iterator();
+        boolean encontrado = false;
+
+        while (iterador.hasNext() && !encontrado) {
+            Curso c = iterador.next();
+            if (c.getCodigo() == codigo) {
+                iterador.remove();
+                System.out.println("Curso eliminado");
+                encontrado = true;
+            }
+        }
         
-        while(iterador.hasNext() && !encontrado){
-            Curso c=iterador.next();
-            if(c.getCodigo()==codigo){
-                curso=c;
+        // listaCursos.removeIf(curso -> curso.getCodigo().equals(codigo));
+    }
+
+    public Curso getCursoCodigo(int codigo) {
+        Iterator<Curso> iterador = listaCursos.iterator();
+        boolean encontrado = false;
+        Curso curso = null;
+
+        while (iterador.hasNext() && !encontrado) {
+            Curso c = iterador.next();
+            if (c.getCodigo() == codigo) {
+                curso = c;
             }
         }
         return curso;
     }
-    
-    public void modificarHoras(Curso curso, int horas){
-        
+
+    public void modificarHoras(int codigo, int horas) {
+        Iterator<Curso> iterador = listaCursos.iterator();
+        boolean encontrado = false;
+
+        while (iterador.hasNext() && !encontrado) {
+            Curso curso = iterador.next();
+            if (curso.getCodigo() == codigo) {
+                curso.setnHoras(horas);
+            }
+        }
     }
-    
-    public void mostrarCursos(){
+
+    public void mostrarCursos() {
         System.out.println(listaCursos);
     }
 }
