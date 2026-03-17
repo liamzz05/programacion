@@ -30,7 +30,7 @@ public class Empleado {
         String clasificacion="";
         if (edad<=21) {
             clasificacion="Principiante";
-        } else if (edad>=22 && edad<=35){
+        } else if (edad<=35){
             clasificacion="Intermedio";
         } else {
             clasificacion="Senior";
@@ -40,7 +40,7 @@ public class Empleado {
     
     @Override
     public String toString() {
-        return "Empleado{" + "nombre=" + nombre + ", departamento=" + departamento + ", edad=" + edad + ", casado=" + casado + ", salario=" + salario + '}';
+        return "Empleado{" + "nombre=" + nombre + ", departamento=" + departamento + ", edad=" + edad + ", casado=" + (casado? "Si":"No") + ", salario=" + salario + '}';
     }
     
     public void aumentarSalario(int porcentaje){
