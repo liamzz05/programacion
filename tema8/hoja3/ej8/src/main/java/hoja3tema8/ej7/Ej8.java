@@ -35,7 +35,7 @@ public class Ej8 {
         BufferedReader br = null;
         FileWriter fw = null;
         BufferedWriter bw = null;
-
+        //?
         fr = new FileReader(file);
         br = new BufferedReader(fr);
         
@@ -54,10 +54,7 @@ public class Ej8 {
                 case 1 -> {
                     System.out.println("Que nombre quieres añadir?");
                     String nuevo = new Scanner(System.in).nextLine();
-                    fw = new FileWriter(file,true);
-                    bw = new BufferedWriter(fw);
                     lista.add(nuevo);
-                    bw.write(nuevo);
                 }
                 case 2 -> {
                     System.out.println("Que nombre quieres borrar?");
