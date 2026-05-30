@@ -11,6 +11,7 @@ package hoja5.gestionarrays;
 public class ArrayUtil {
     
     public static int contarElementos(int [] array){
+        estaVacio(array);
         int numero=0;
         for (int num : array) {
             numero++;

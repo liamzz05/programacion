@@ -25,9 +25,13 @@ public class EjClase2 {
         Articulo b4= new EnPromocion(4,"Zumo",1,35);
         Articulo b5= new EnPromocion(5,"Sal",3,10);
         
-        Articulo[] articulos={b1,b2,b3,b4,b5};
+        Articulo[] enPromocion={b1,b2,b3,b4,b5};
         
         System.out.println("Visualizar articulos en promocion:");
+        
+        for(Articulo articulo : enPromocion){
+            System.out.println(articulo.toString());
+        }
         
         System.out.println("Visualizar codigo y descripcion de articulos caducados:");
         
