@@ -24,8 +24,16 @@ public class Runner extends Persona {
         this.dorsal = dorsal;
     }
 
+    public int getDorsal() {
+        return dorsal;
+    }
+
     public void setTiempoMinutos(int tiempoMinutos) {
         this.tiempoMinutos = tiempoMinutos;
+    }
+
+    public int getTiempoMinutos() {
+        return tiempoMinutos;
     }
 
     @Override
@@ -35,7 +43,7 @@ public class Runner extends Persona {
         hash = 61 * hash + this.tiempoMinutos;
         return hash;
     }
-
+    // ¿?¿?!!!
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

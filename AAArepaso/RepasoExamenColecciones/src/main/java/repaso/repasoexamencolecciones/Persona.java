@@ -24,6 +24,10 @@ public abstract class Persona {
     public String getDNI() {
         return DNI;
     }
+
+    public LocalDate getFechaNac() {
+        return fechaNac;
+    }
     
     public abstract void informar();
 }

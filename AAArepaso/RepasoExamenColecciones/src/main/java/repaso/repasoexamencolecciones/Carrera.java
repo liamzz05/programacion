@@ -4,18 +4,25 @@
  */
 package repaso.repasoexamencolecciones;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author DAM104
  */
 public interface Carrera {
-    
-    
-    public static void generarDorsales(){
-        
+
+    public static void generarDorsales(ArrayList<Runner> lista) {
+        for (Runner c : lista) {
+            if (c.getDorsal() == -1) {
+                c.setDorsal(lista.indexOf(c));
+            }
+        }
     }
-    
-    public static void simularCarrera(){
-        
+
+    public static void simularCarrera(ArrayList<Runner> lista) {
+        for (Runner c : lista) {
+            c.setTiempoMinutos((int)(Math.random()*(160-61)+60));
+        }
     }
 }

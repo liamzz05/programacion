@@ -10,11 +10,11 @@ import java.time.LocalDate;
  *
  * @author DAM104
  */
-public class Jueces extends Persona {
+public class Juez extends Persona {
 
     private int licencia;
 
-    public Jueces(String DNI, String nombre, LocalDate fechaNac, int licencia) {
+    public Juez(String DNI, String nombre, LocalDate fechaNac, int licencia) {
         super(DNI, nombre, fechaNac);
         this.licencia = licencia;
     }
